@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="CoilSimulater.Utilities.ParameterSettingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Width="Auto" Height="Auto">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid Width="Auto" Height="Auto" Name="Contents" ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+    </Grid>
+</UserControl>

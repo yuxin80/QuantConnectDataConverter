@@ -1,0 +1,51 @@
+﻿<util:ParameterCustomControlBase x:Class="CoilSimulater.Utilities.ParameterListGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:util="clr-namespace:CoilSimulater.Utilities"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="{x:Type ListBoxItem}" TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Grid>
+                                <ContentPresenter />
+                                <TextBox Name="EditableText" Visibility="Collapsed"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="true">
+                                    <Setter TargetName="EditableText" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="EditableText" Property="Text" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ToolBar>
+            <Button Name="AddEnd" Width="24" Height="24" Click="AddEnd_Click">
+                <Image Source="/CoilSimulater.Utilities;component/Images/TableAppendRow.ico"></Image>
+            </Button>
+            <Button Name="Delete" Width="24" Height="24" Click="Delete_Click">
+                <Image Source="/CoilSimulater.Utilities;component/Images/TableDeleteRow.ico"></Image>
+            </Button>
+        </ToolBar>
+        <ListBox Name="ListContent" Grid.Row="1">
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBox Text="{Binding Path=Value}"></TextBox>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+        </ListBox>
+        <DataGrid Name="DataContent" Grid.Row="1"></DataGrid>
+    </Grid>
+</util:ParameterCustomControlBase>

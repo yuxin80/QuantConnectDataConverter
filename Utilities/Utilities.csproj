@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FB9995E-0630-4C7B-B00C-A8BA5E0D6D68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoilSimulater.Utilities</RootNamespace>
+    <AssemblyName>CoilSimulater.Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)bin\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)bin\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationUtilities.cs" />
+    <Compile Include="AsciiParser\FileParser.cs" />
+    <Compile Include="AsciiParser\FileParserControl.xaml.cs">
+      <DependentUpon>FileParserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CancelToken.cs" />
+    <Compile Include="ClassUtilites.cs" />
+    <Compile Include="CloneIgnoreAttribute.cs" />
+    <Compile Include="IDragDropTarget.cs" />
+    <Compile Include="ParameterUtil\ParameterControlBase.cs" />
+    <Compile Include="ParameterUtil\ParameterControlManager.cs" />
+    <Compile Include="ReferenceTypeAttribute.cs" />
+    <Compile Include="Templates\TextErrorTemplate.cs" />
+    <Compile Include="DefaultValueAttribute.cs" />
+    <Compile Include="ITransaction.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LogMessage.cs" />
+    <Compile Include="ObjectBase.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="ParameterUtil\ParameterBase.cs" />
+    <Compile Include="ParameterUtil\ParameterCustomControlBase.cs" />
+    <Compile Include="ParameterUtil\ParameterListGrid.xaml.cs">
+      <DependentUpon>ParameterListGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterUtil\ParameterListSmall.xaml.cs">
+      <DependentUpon>ParameterListSmall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterUtil\ParameterSettingControl.xaml.cs">
+      <DependentUpon>ParameterSettingControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParameterUtil\ParameterUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeUtilities.cs" />
+    <Compile Include="ValidationRules\NumberInputValidationRule.cs" />
+    <Compile Include="ValidationRules\NumberRangeValidationRule.cs" />
+    <Compile Include="ValueConverters\DegreeToRadConverter.cs" />
+    <Compile Include="ValueConverters\DoubleToIntConverter.cs" />
+    <Compile Include="ValueConverters\DoubleToStringConverter.cs" />
+    <Compile Include="ValueConverters\EnumToStringConverter.cs" />
+    <Compile Include="ValueConverters\HalfValueConverter.cs" />
+    <Compile Include="ValueConverters\ImageUriConverter.cs" />
+    <Compile Include="ValueConverters\IntToStringConverter.cs" />
+    <Compile Include="ValueConverters\MultiBindingDefaultConverter.cs" />
+    <Compile Include="ValueConverters\MultiplyConverter.cs" />
+    <Compile Include="ValueConverters\ObjectToStringConverter.cs" />
+    <Compile Include="ValueConverters\ObjectToTypeConverter.cs" />
+    <Compile Include="ValueConverters\OpositeBooleanConverter.cs" />
+    <Compile Include="ValueConverters\RadToDegreeConverter.cs" />
+    <Compile Include="ValueConverters\RadToDegreeTextConverter.cs" />
+    <Compile Include="ValueConverters\StringToDoubleConverter.cs" />
+    <Compile Include="WpfUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Default_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AsciiParser\FileParserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParameterUtil\ParameterListGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParameterUtil\ParameterListSmall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParameterUtil\ParameterSettingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TableAddRow.ico" />
+    <Resource Include="Images\TableAppendRow.ico" />
+    <Resource Include="Images\TableDeleteRow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

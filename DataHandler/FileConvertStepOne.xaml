@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="DataHandler.FileConvertStepOne"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DataHandler"
+             xmlns:util ="clr-namespace:CoilSimulater.Utilities.AsciiParser;assembly=CoilSimulater.Utilities"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <util:FileParserControl Parameters="{Binding Path=Parameters,RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="1">
+            <Button Name="btnNext" Width="40" Height="25" Content="Next>" Margin="0,0,10,0" Click="btnNext_Click"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
